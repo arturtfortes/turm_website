@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#080A0D" />
+<meta name="author" content="Turm" />
+<meta name="robots" content="index, follow" />
+<title>Turm — Agência de Growth com IA</title>
+<meta name="description" content="A Turm cria sites de alta conversão, automações com IA e campanhas de tráfego pago para empresas que querem escalar com precisão e previsibilidade." />
+
+<link rel="canonical" href="https://turm.com.br/" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Turm" />
+<meta property="og:url" content="https://turm.com.br/" />
+<meta property="og:title" content="Turm — Agência de Growth com IA" />
+<meta property="og:description" content="Sites de alta conversão, tráfego pago e automações com IA. Um único sistema de vendas para sua empresa escalar." />
+<meta property="og:image" content="https://turm.com.br/assets/img/turm-logo.png" />
+<meta property="og:locale" content="pt_BR" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Turm — Agência de Growth com IA" />
+<meta name="twitter:description" content="Sites de alta conversão, tráfego pago e automações com IA. Um único sistema de vendas." />
+<meta name="twitter:image" content="https://turm.com.br/assets/img/turm-logo.png" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="assets/img/turm-logo.svg">
+<link rel="alternate icon" href="assets/img/turm-logo.png">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200;300;400;500;600;700&family=Inter:wght@100;300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link rel="stylesheet" href="css/styles.css">
+
+<!-- GSAP + ScrollTrigger + Lenis -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js" defer></script>
+
+<!-- JSON-LD Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Turm",
+  "url": "https://turm.com.br/",
+  "logo": "https://turm.com.br/assets/img/turm-logo.png",
+  "description": "Agência de Growth com IA. Sites de alta conversão, tráfego pago e automações com IA — um único sistema de vendas.",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Comercial",
+    "email": "contato@turm.com.br",
+    "availableLanguage": ["Portuguese"]
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="#hero" class="skip-link">Ir para o conteúdo principal</a>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#hero" class="brand" aria-label="Turm">
+      <img src="assets/img/turm-logo.svg" alt="" class="brand-logo" aria-hidden="true">
+      <span class="brand-name">Turm</span>
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#servicos">Soluções</a>
+      <a href="#diagnostico">Método</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:.75rem;">
+      <a href="#diagnostico" class="nav-cta">
+        Diagnóstico
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile navigation drawer -->
+<nav class="mobile-nav" id="mobile-nav" aria-label="Menu mobile">
+  <a href="#servicos">Soluções</a>
+  <a href="#diagnostico">Método</a>
+  <a href="#contato">Contato</a>
+  <a href="#diagnostico" class="mobile-cta">Solicitar diagnóstico</a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <!-- Background video w/ parallax wrapper -->
+  <div class="hero-bg">
+    <div class="hero-bg-inner" id="parallaxBg">
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/turm-logo.png">
+        <source src="assets/video/logo-animado.webm" type="video/webm">
+      </video>
+    </div>
+  </div>
+
+  <!-- Atmosphere -->
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="scan-lines" aria-hidden="true"></div>
+  <div class="blob b1" aria-hidden="true"></div>
+  <div class="blob b2" aria-hidden="true"></div>
+  <div class="blob b3" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="hero-content">
+
+      <!-- CENTERED copy -->
+      <div class="hero-copy">
+        <span class="eyebrow reveal" data-rv>
+          <span class="dot"></span>
+          AI-Driven Growth Agency
+        </span>
+
+        <h1 class="reveal" data-rv>
+          <span class="word">Seu site, seus anúncios</span><br>
+          <span class="word">e seu WhatsApp trabalhando</span><br>
+          <span class="word">como um</span> <span class="word grad">único sistema</span> <span class="word grad">de vendas.</span>
+        </h1>
+
+        <p class="hero-sub reveal" data-rv>
+          A Turm cria sites de alta conversão, campanhas de tráfego pago e automações com IA para ajudar empresas a captar, responder, qualificar e acompanhar leads com mais velocidade e controle.
+        </p>
+
+        <div class="cta-group reveal" data-rv>
+          <a href="#diagnostico" class="btn btn-primary">
+            Solicitar diagnóstico gratuito
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+          <a href="#servicos" class="btn btn-ghost">
+            Conhecer soluções
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+        </div>
+
+        <div class="trust reveal" data-rv>
+          <span class="divider"></span>
+          <span>Estratégia, tecnologia e execução em um único sistema de crescimento.</span>
+        </div>
+      </div>
+
+      <!-- BELOW: floating service cards -->
+      <div class="service-stage" aria-hidden="true">
+
+        <div class="glass-card c1 reveal float-card" data-rv data-float="-1">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <div class="meta">
+            <span class="label">Automações com IA</span>
+            <span class="tag">AI · Ops</span>
+          </div>
+        </div>
+
+        <div class="glass-card c2 reveal float-card" data-rv data-float="1">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 9 5-9 5-9-5 9-5z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/></svg>
+          </div>
+          <div class="meta">
+            <span class="label">Sites de alta conversão</span>
+            <span class="tag">Web · CRO</span>
+          </div>
+        </div>
+
+        <div class="glass-card c3 reveal float-card" data-rv data-float="-1">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></svg>
+          </div>
+          <div class="meta">
+            <span class="label">Tráfego pago</span>
+            <span class="tag">Ads · Performance</span>
+          </div>
+        </div>
+
+        <div class="glass-card c4 reveal float-card" data-rv data-float="1">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="meta">
+            <span class="label">WhatsApp inteligente</span>
+            <span class="tag">CX · AI Agents</span>
+          </div>
+        </div>
+
+        <div class="glass-card c5 reveal float-card" data-rv data-float="-1">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="4" width="3" height="14"/></svg>
+          </div>
+          <div class="meta">
+            <span class="label">Dashboards e dados</span>
+            <span class="tag">BI · Insights</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Stats strip -->
+    <div class="stats reveal" data-rv>
+      <div class="stat"><span class="num">+38%</span><span class="lbl">Conversão média</span></div>
+      <div class="stat"><span class="num">24/7</span><span class="lbl">Atendimento com IA</span></div>
+      <div class="stat"><span class="num">~6×</span><span class="lbl">ROI em tráfego pago</span></div>
+      <div class="stat"><span class="num">100%</span><span class="lbl">Execução mensurável</span></div>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true">
+    <span>Scroll</span>
+    <span class="line"></span>
+  </div>
+</section>
+
+<!-- ============ DOBRA 2 — IDENTIFICAÇÃO DO PROBLEMA ============ -->
+<section class="problem" id="problema">
+  <div class="grid-bg-static" aria-hidden="true"></div>
+
+  <div class="container">
+
+    <div class="problem-head">
+      <span class="eyebrow reveal" data-rv>
+        <span class="dot"></span>
+        Diagnóstico · Onde o funil vaza
+      </span>
+      <h2 class="reveal" data-rv>
+        Sua empresa pode estar <span class="grad">perdendo vendas</span><br>
+        antes mesmo de falar com o cliente.
+      </h2>
+      <p class="problem-lede reveal" data-rv>
+        Muitos negócios investem em anúncios, redes sociais e site, mas continuam operando com um funil frágil — sem conexão entre marketing, página de venda e atendimento.
+      </p>
+    </div>
+
+    <div class="symptoms">
+      <article class="symptom reveal" data-rv>
+        <span class="num">01</span>
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </div>
+        <p>O lead chega, mas <b>não entende rapidamente</b> sua oferta.</p>
+      </article>
+
+      <article class="symptom reveal" data-rv>
+        <span class="num">02</span>
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M12 11v.01"/></svg>
+        </div>
+        <p>Chama no WhatsApp, mas <b>demora para ser respondido</b>.</p>
+      </article>
+
+      <article class="symptom reveal" data-rv>
+        <span class="num">03</span>
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <p>Pede informação, mas <b>não recebe follow-up</b>.</p>
+      </article>
+
+      <article class="symptom reveal" data-rv>
+        <span class="num">04</span>
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 4-4 4 4 5-5"/></svg>
+        </div>
+        <p>Vem de uma campanha, mas <b>ninguém sabe se ele era qualificado</b>.</p>
+      </article>
+
+      <article class="symptom reveal" data-rv>
+        <span class="num">05</span>
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <p>Demonstra interesse, mas <b>esfria antes de avançar</b>.</p>
+      </article>
+    </div>
+
+    <div class="support-block reveal" data-rv>
+      <div class="marker" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="m16.24 16.24 2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="m4.93 19.07 2.83-2.83"/><path d="m16.24 7.76 2.83-2.83"/></svg>
+      </div>
+      <p>
+        Se o seu marketing <b>gera atenção</b>, mas seu processo <b>não transforma essa atenção em conversa comercial</b>, parte do investimento está escapando pelo funil.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ DOBRA 3 — SOLUÇÃO ============ -->
+<section class="solution" id="solucao">
+  <div class="sol-blob a" aria-hidden="true"></div>
+  <div class="sol-blob b" aria-hidden="true"></div>
+
+  <div class="container">
+
+    <div class="solution-grid">
+
+      <!-- LEFT — copy -->
+      <div class="solution-copy">
+        <span class="eyebrow reveal" data-rv>
+          <span class="dot"></span>
+          Solução
+        </span>
+        <h2 class="reveal" data-rv>
+          Um <span class="grad">sistema comercial digital</span>, não serviços isolados.
+        </h2>
+        <p class="solution-lede reveal" data-rv>
+          A Turm conecta aquisição, conversão e atendimento em uma única estrutura — para que o lead encontre sua empresa, entenda a oferta e seja conduzido até a próxima etapa comercial.
+        </p>
+        <div class="solution-mini reveal" data-rv>
+          <span class="divider"></span>
+          <span>Site · Tráfego · WhatsApp · IA · Dados</span>
+        </div>
+      </div>
+
+      <!-- RIGHT — Hub diagram with particle globe -->
+      <div class="hub reveal" data-rv>
+      <!-- Three.js particle globe canvas -->
+      <div id="hub-globe" class="hub-globe" aria-hidden="true"></div>
+
+      <div class="hub-pillar p1">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+        </div>
+        <span class="label">Site</span>
+      </div>
+
+      <div class="hub-pillar p2">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></svg>
+        </div>
+        <span class="label">Tráfego</span>
+      </div>
+
+      <div class="hub-pillar p3">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <span class="label">Atendimento</span>
+      </div>
+
+      <div class="hub-pillar p4">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <span class="label">IA</span>
+      </div>
+
+      <div class="hub-pillar p5">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="4" width="3" height="14"/></svg>
+        </div>
+        <span class="label">Dados</span>
+      </div>
+      </div>
+
+    </div>
+
+    <!-- Complementary block -->
+    <div class="complement reveal" data-rv>
+      <p>
+        Não é apenas sobre ter <em style="font-style:normal;color:var(--ink-500);">mais ferramentas</em>.<br>
+        É sobre fazer <b>site, anúncios e atendimento</b> trabalharem com o mesmo objetivo.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ DOBRA 4 — SERVIÇOS ============ -->
+<section class="services" id="servicos">
+  <div class="container">
+
+    <div class="services-head">
+      <span class="eyebrow reveal" data-rv>
+        <span class="dot"></span>
+        Serviços
+      </span>
+      <h2 class="reveal" data-rv>
+        O que a Turm pode <span class="grad">construir</span> para sua empresa.
+      </h2>
+      <p class="services-lede reveal" data-rv>
+        Quatro frentes que cobrem o ciclo completo — da atração à qualificação. Combine como precisar.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- 01 — Sites e landing pages -->
+      <article class="service-card reveal" data-rv>
+        <span class="service-index">01</span>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="16" rx="2"/>
+            <path d="M3 9h18"/>
+            <path d="M7 6.5h.01"/><path d="M10 6.5h.01"/>
+          </svg>
+        </div>
+        <h3 class="service-title">Sites e landing pages</h3>
+        <p class="service-desc">
+          Páginas com copy, design e estrutura pensados para gerar ação — não só impressão.
+        </p>
+        <div class="service-ideal">
+          <span class="label">Ideal para</span>
+          <p>Empresas que precisam apresentar melhor sua oferta e converter visitantes em contatos comerciais.</p>
+        </div>
+        <a href="#diagnostico" class="service-cta">
+          Quero esse serviço
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+      </article>
+
+      <!-- 02 — Conteúdo e criativos -->
+      <article class="service-card reveal" data-rv>
+        <span class="service-index">02</span>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h12l4 4v12a0 0 0 0 1 0 0H4z"/>
+            <path d="M16 4v4h4"/>
+            <path d="M8 13h8"/>
+            <path d="M8 17h5"/>
+          </svg>
+        </div>
+        <h3 class="service-title">Conteúdo e criativos</h3>
+        <p class="service-desc">
+          Mensagens, anúncios e peças alinhadas à estratégia comercial — não só ao calendário.
+        </p>
+        <div class="service-ideal">
+          <span class="label">Ideal para</span>
+          <p>Empresas que precisam comunicar melhor sua oferta e gerar confiança antes da venda.</p>
+        </div>
+        <a href="#diagnostico" class="service-cta">
+          Quero esse serviço
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+      </article>
+
+      <!-- 03 — Automação com IA -->
+      <article class="service-card reveal" data-rv>
+        <span class="service-index">03</span>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="6" width="16" height="12" rx="3"/>
+            <path d="M12 3v3"/>
+            <circle cx="9" cy="12" r="1"/>
+            <circle cx="15" cy="12" r="1"/>
+            <path d="M9 16h6"/>
+          </svg>
+        </div>
+        <h3 class="service-title">Automação com IA</h3>
+        <p class="service-desc">
+          Fluxos inteligentes para responder, qualificar e acompanhar leads no WhatsApp e outros canais.
+        </p>
+        <div class="service-ideal">
+          <span class="label">Ideal para</span>
+          <p>Empresas que recebem contatos, mas perdem oportunidades por demora ou falta de follow-up.</p>
+        </div>
+        <a href="#diagnostico" class="service-cta">
+          Quero esse serviço
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+      </article>
+
+      <!-- 04 — Tráfego pago -->
+      <article class="service-card reveal" data-rv>
+        <span class="service-index">04</span>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 17 9 11l4 4 8-8"/>
+            <path d="M14 7h7v7"/>
+          </svg>
+        </div>
+        <h3 class="service-title">Tráfego pago</h3>
+        <p class="service-desc">
+          Campanhas no Google, Meta e outros canais para atrair demanda qualificada com previsibilidade.
+        </p>
+        <div class="service-ideal">
+          <span class="label">Ideal para</span>
+          <p>Empresas que querem gerar leads com mais controle sobre canal, custo e performance.</p>
+        </div>
+        <a href="#diagnostico" class="service-cta">
+          Quero esse serviço
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+      </article>
+
+    </div>
+
+    <!-- Fechamento -->
+    <div class="services-close reveal" data-rv>
+      <span class="pulse" aria-hidden="true"></span>
+      <p>
+        Cada serviço funciona de forma independente — mas o maior impacto acontece quando eles trabalham <b>conectados</b>.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ DOBRA 5 — BENEFÍCIOS ============ -->
+<section class="benefits" id="beneficios">
+  <div class="container">
+
+    <div class="benefits-split">
+
+      <!-- LEFT — pitch -->
+      <div class="benefits-left reveal" data-rv>
+        <span class="eyebrow">Benefícios da Turm</span>
+        <h2>Mais clareza, mais conversão & <span class="grad">mais previsibilidade</span></h2>
+        <p>Tenha acesso a uma estrutura comercial completa sem perder agilidade ou atenção personalizada.</p>
+        <p>Trabalhe com um time integrado de site, tráfego, IA e conteúdo que já pensa cinco movimentos à frente do seu funil.</p>
+        <a href="#contato" class="benefits-cta">
+          Quero esses ganhos
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- RIGHT — 6 benefits grid -->
+      <div class="cap-grid">
+
+        <a href="#servicos" class="cap-item t-blue reveal" data-rv>
+          <span class="cap-arrow ai-bolt">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+          </span>
+          <div>
+            <h3 class="cap-title">Conversão <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></h3>
+            <p class="cap-desc">Respostas mais rápidas e follow-ups estruturados — menos oportunidades perdidas entre etapas do funil.</p>
+          </div>
+        </a>
+
+        <a href="#servicos" class="cap-item t-teal reveal" data-rv>
+          <span class="cap-arrow ai-target">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="22"/><line x1="2" y1="12" x2="8" y2="12"/><line x1="16" y1="12" x2="22" y2="12"/><circle class="target-ping" cx="12" cy="12" r="4" fill="none"/></svg>
+          </span>
+          <div>
+            <h3 class="cap-title">Posicionamento <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></h3>
+            <p class="cap-desc">Seu site passa a explicar o que você vende, para quem vende e por que o cliente deve avançar agora.</p>
+          </div>
+        </a>
+
+        <a href="#servicos" class="cap-item t-cyan reveal" data-rv>
+          <span class="cap-arrow ai-trend">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path class="trend-line" d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
+          </span>
+          <div>
+            <h3 class="cap-title">Aquisição <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></h3>
+            <p class="cap-desc">Tráfego pago deixa de levar pessoas para uma experiência fraca e passa a alimentar um funil preparado para converter.</p>
+          </div>
+        </a>
+
+        <a href="#servicos" class="cap-item t-violet reveal" data-rv>
+          <span class="cap-arrow ai-gear">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.2 4.2l2.8 2.8M17 17l2.8 2.8M1 12h4M19 12h4M4.2 19.8L7 17M17 7l2.8-2.8"/></svg>
+          </span>
+          <div>
+            <h3 class="cap-title">Operação <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></h3>
+            <p class="cap-desc">A IA coleta informações, qualifica contatos e direciona oportunidades — com menos dependência de processo manual.</p>
+          </div>
+        </a>
+
+        <a href="#servicos" class="cap-item t-amber reveal" data-rv>
+          <span class="cap-arrow ai-eye">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle class="eye-pupil" cx="12" cy="12" r="3"/></svg>
+          </span>
+          <div>
+            <h3 class="cap-title">Visibilidade <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></h3>
+            <p class="cap-desc">Você entende quais canais geram leads, quais etapas travam e onde estão as oportunidades de melhoria.</p>
+          </div>
+        </a>
+
+        <a href="#servicos" class="cap-item t-rose reveal" data-rv>
+          <span class="cap-arrow ai-sync">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-15.5 6.3M3 12a9 9 0 0 1 15.5-6.3"/><path d="M21 4v5h-5M3 20v-5h5"/></svg>
+          </span>
+          <div>
+            <h3 class="cap-title">Consistência <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></h3>
+            <p class="cap-desc">Sua comunicação deixa de depender de improviso e segue uma lógica clara de abordagem, resposta e acompanhamento.</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+
+<!-- ============ DOBRA 6 — DIAGNÓSTICO ============ -->
+<section class="diagnostic" id="diagnostico">
+  <div class="container">
+
+    <div class="diagnostic-head">
+      <span class="eyebrow reveal" data-rv>
+        <span class="dot"></span>
+        Diagnóstico
+      </span>
+      <h2 class="reveal" data-rv>
+        Descubra onde seu funil está <span class="grad">perdendo oportunidades</span>.
+      </h2>
+      <p class="reveal" data-rv>
+        A Turm analisa seu site, campanhas, WhatsApp e processo de atendimento para identificar gargalos de conversão e oportunidades de automação com IA.
+      </p>
+    </div>
+
+    <div class="method-head reveal" data-rv>
+      <span class="label">Método</span>
+      <h3>Como a Turm conduz o processo</h3>
+      <span class="count">04 etapas</span>
+    </div>
+
+    <div class="method-grid">
+
+      <!-- 01 — Diagnóstico -->
+      <article class="method-step reveal" data-rv>
+        <span class="num">01</span>
+        <div class="method-node" aria-hidden="true">
+          <span class="pulse"></span>
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        </div>
+        <h4>Diagnóstico</h4>
+        <p>Analisamos sua presença digital, oferta, site, campanhas e pontos de perda no funil.</p>
+      </article>
+
+      <!-- 02 — Estratégia -->
+      <article class="method-step reveal" data-rv>
+        <span class="num">02</span>
+        <div class="method-node" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+        </div>
+        <h4>Estratégia</h4>
+        <p>Definimos as ações que fazem mais sentido para o seu momento: página, tráfego, automação ou indicadores.</p>
+      </article>
+
+      <!-- 03 — Implementação -->
+      <article class="method-step reveal" data-rv>
+        <span class="num">03</span>
+        <div class="method-node" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 5 6 .9-4.5 4.2 1 6.4L12 15.8 6.5 18.5l1-6.4L3 7.9 9 7z"/></svg>
+        </div>
+        <h4>Implementação</h4>
+        <p>Criamos e otimizamos os ativos para captar, responder, qualificar e acompanhar melhor os leads.</p>
+      </article>
+
+      <!-- 04 — Otimização -->
+      <article class="method-step reveal" data-rv>
+        <span class="num">04</span>
+        <div class="method-node" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-15.5 6.3M3 12a9 9 0 0 1 15.5-6.3"/><path d="M21 4v5h-5M3 20v-5h5"/></svg>
+        </div>
+        <h4>Otimização</h4>
+        <p>Acompanhamos os dados e ajustamos campanhas, páginas, mensagens e automações ao longo do tempo.</p>
+      </article>
+
+    </div>
+
+    <!-- Final CTA -->
+    <div class="diagnostic-cta reveal" data-rv>
+      <div class="diagnostic-cta-inner">
+        <div>
+          <h3>Seu marketing não precisa gerar apenas cliques. Ele precisa gerar <span class="grad">oportunidades bem conduzidas</span>.</h3>
+          <p>A Turm conecta site, tráfego, WhatsApp e IA em uma estrutura mais clara, rápida e mensurável para ajudar sua empresa a aproveitar melhor cada lead.</p>
+        </div>
+
+        <div class="diagnostic-actions">
+          <a href="#contato" class="btn btn-primary">
+            Solicitar diagnóstico gratuito
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+          <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="btn btn-whats">
+            Falar com a Turm no WhatsApp
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </a>
+          <div class="diagnostic-micro">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 2"/></svg>
+            <span>Primeiro analisamos os gargalos. Depois indicamos os próximos passos com base no que pode gerar mais impacto.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ DOBRA 8 — CONTATO ============ -->
+<section class="contato" id="contato">
+  <div class="contato-blob a" aria-hidden="true"></div>
+  <div class="contato-blob b" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="contato-inner">
+
+      <!-- LEFT — copy -->
+      <div class="contato-copy">
+        <span class="eyebrow reveal" data-rv>
+          <span class="dot"></span>
+          Contato
+        </span>
+        <h2 class="reveal" data-rv>
+          Vamos conversar sobre o <span class="grad">crescimento da sua empresa</span>.
+        </h2>
+        <p class="contato-desc reveal" data-rv>
+          Preencha o formulário ao lado ou nos chame diretamente no WhatsApp. A primeira conversa é um diagnóstico — sem compromisso, sem enrolação.
+        </p>
+        <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="contato-whats reveal" data-rv>
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Chamar no WhatsApp
+        </a>
+        <div class="contato-info reveal" data-rv>
+          <div class="contato-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>contato@turm.com.br</span>
+          </div>
+          <div class="contato-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Resposta em até 24h úteis</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT — form -->
+      <div class="contato-form reveal" data-rv>
+        <form id="contato-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-nome">Nome</label>
+              <input type="text" id="f-nome" name="nome" placeholder="Seu nome" required>
+            </div>
+            <div class="form-group">
+              <label for="f-empresa">Empresa</label>
+              <input type="text" id="f-empresa" name="empresa" placeholder="Nome da empresa">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-email">E-mail</label>
+              <input type="email" id="f-email" name="email" placeholder="seu@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="f-telefone">WhatsApp</label>
+              <input type="tel" id="f-telefone" name="telefone" placeholder="(11) 99999-9999">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="f-servico">Qual serviço te interessa?</label>
+            <select id="f-servico" name="servico">
+              <option value="">Selecione uma opção</option>
+              <option value="site">Site de alta conversão</option>
+              <option value="trafego">Tráfego pago</option>
+              <option value="automacao">Automação com IA</option>
+              <option value="conteudo">Conteúdo e criativos</option>
+              <option value="sistema">Sistema completo</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="f-mensagem">Conte um pouco sobre o seu negócio</label>
+            <textarea id="f-mensagem" name="mensagem" placeholder="O que você vende, qual o principal desafio..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Solicitar diagnóstico gratuito</button>
+          <p class="form-micro">Sem spam. Analisamos e respondemos em até 24h úteis.</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <a href="#hero" class="brand" aria-label="Turm">
+          <img src="assets/img/turm-logo.svg" alt="" class="brand-logo" aria-hidden="true">
+          <span class="brand-name">Turm</span>
+        </a>
+        <p class="footer-tagline">Estratégia, tecnologia e execução em um único sistema de crescimento.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Serviços</h4>
+        <ul>
+          <li><a href="#servicos">Sites e landing pages</a></li>
+          <li><a href="#servicos">Tráfego pago</a></li>
+          <li><a href="#servicos">Automação com IA</a></li>
+          <li><a href="#servicos">Conteúdo e criativos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#diagnostico">Método</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="#">Política de privacidade</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 Turm. CNPJ 00.000.000/0001-00 — Todos os direitos reservados.</span>
+      <div class="footer-legal">
+        <a href="#">Privacidade</a>
+        <a href="#">Termos de uso</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ LGPD BANNER ============ -->
+<div class="lgpd-banner" id="lgpd-banner" role="dialog" aria-label="Aviso de cookies">
+  <p class="lgpd-text">
+    Usamos cookies para melhorar sua experiência e analisar o desempenho do site. Ao continuar, você concorda com nossa <a href="#">Política de Privacidade</a>.
+  </p>
+  <div class="lgpd-actions">
+    <button class="lgpd-accept" id="lgpd-accept">Aceitar</button>
+    <button class="lgpd-dismiss" id="lgpd-dismiss">Recusar</button>
+  </div>
+</div>
+
+<script src="js/app.js" defer></script>
+
+<!-- ════════════════════════════════════════════════════
+     Three.js Particle Globe (Dobra 3 — Solução)
+════════════════════════════════════════════════════ -->
+<script src="js/vendor/three.min.js" defer></script>
+<script id="hubVertexShader" type="x-shader/x-vertex">
+uniform float uTime; uniform float uDistortion; uniform float uSize; uniform vec2 uMouse; varying float vNoise;
+vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+vec4 mod289(vec4 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+vec4 permute(vec4 x) { return mod289(((x*34.0)+1.0)*x); }
+vec4 taylorInvSqrt(vec4 r) { return 1.79284291400159 - 0.85373472095314 * r; }
+float snoise(vec3 v) { const vec2 C = vec2(1.0/6.0, 1.0/3.0) ; const vec4 D = vec4(0.0, 0.5, 1.0, 2.0); vec3 i = floor(v + dot(v, C.yyy) ); vec3 x0 = v - i + dot(i, C.xxx) ; vec3 g = step(x0.yzx, x0.xyz); vec3 l = 1.0 - g; vec3 i1 = min( g.xyz, l.zxy ); vec3 i2 = max( g.xyz, l.zxy ); vec3 x1 = x0 - i1 + 1.0 * C.xxx; vec3 x2 = x0 - i2 + 2.0 * C.xxx; vec3 x3 = x0 - 1.0 + 3.0 * C.xxx; i = mod289(i); vec4 p = permute( permute( permute( i.z + vec4(0.0, i1.z, i2.z, 1.0 )) + i.y + vec4(0.0, i1.y, i2.y, 1.0 )) + i.x + vec4(0.0, i1.x, i2.x, 1.0 )); float n_ = 1.0/7.0; vec3 ns = n_ * D.wyz - D.xzx; vec4 j = p - 49.0 * floor(p * ns.z *ns.z); vec4 x_ = floor(j * ns.z); vec4 y_ = floor(j - 7.0 * x_ ); vec4 x = x_ *ns.x + ns.yyyy; vec4 y = y_ *ns.x + ns.yyyy; vec4 h = 1.0 - abs(x) - abs(y); vec4 b0 = vec4( x.xy, y.xy ); vec4 b1 = vec4( x.zw, y.zw ); vec4 s0 = floor(b0)*2.0 + 1.0; vec4 s1 = floor(b1)*2.0 + 1.0; vec4 sh = -step(h, vec4(0.0)); vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy ; vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww ; vec3 p0 = vec3(a0.xy,h.x); vec3 p1 = vec3(a0.zw,h.y); vec3 p2 = vec3(a1.xy,h.z); vec3 p3 = vec3(a1.zw,h.w); vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2, p2), dot(p3,p3))); p0 *= norm.x; p1 *= norm.y; p2 *= norm.z; p3 *= norm.w; vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0); m = m * m; return 42.0 * dot( m*m, vec4( dot(p0,x0), dot(p1,x1), dot(p2,x2), dot(p3,x3) ) ); }
+void main() { vec3 pos = position; float noise = snoise(vec3(pos.x * 0.5 + uTime * 0.15, pos.y * 0.5, pos.z * 0.5)); vNoise = noise; vec3 newPos = pos + (normal * noise * uDistortion); float dist = distance(uMouse * 10.0, newPos.xy); float interaction = smoothstep(6.0, 0.0, dist); newPos.z += interaction * 1.5; vec4 mvPosition = modelViewMatrix * vec4(newPos, 1.0); gl_Position = projectionMatrix * mvPosition; gl_PointSize = uSize * (22.0 / -mvPosition.z); }
+</script>
+<script id="hubFragmentShader" type="x-shader/x-fragment">
+uniform vec3 uColor; uniform vec3 uColorAccent; varying float vNoise;
+void main() {
+  vec2 center = gl_PointCoord - vec2(0.5);
+  float dist = length(center);
+  if (dist > 0.5) discard;
+  float alpha = smoothstep(0.5, 0.0, dist);
+  vec3 finalColor = mix(uColor, uColorAccent, vNoise * 0.5 + 0.5);
+  gl_FragColor = vec4(finalColor, alpha * 0.85);
+}
+</script>
+<script src="js/globe.js" defer></script>
+
+
+</body>
+</html>

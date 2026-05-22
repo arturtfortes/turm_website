@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://turm.com.br/sitemap.xml
