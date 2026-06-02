@@ -70,10 +70,11 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
   gsap.to('.blob.b2', { yPercent: 10,  ease: 'none', scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true } });
 }
 
-/* Mouse parallax — subtle */
+/* Mouse parallax — só em dispositivos com mouse/trackpad */
 const hero = document.getElementById('hero');
 let mx = 0, my = 0, tx = 0, ty = 0;
-if (hero) {
+const hasHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+if (hero && hasHover) {
   hero.addEventListener('mousemove', (e) => {
     const r = hero.getBoundingClientRect();
     mx = (e.clientX - r.left) / r.width - 0.5;
