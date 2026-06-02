@@ -1,7 +1,6 @@
-/* Marca js-ready imediatamente para que o estado inicial do .reveal seja aplicado */
 document.documentElement.classList.add('js-ready');
 
-/* Reveal via IntersectionObserver — independente de GSAP/Lenis */
+/* Reveal via IntersectionObserver */
 (function () {
   const items = document.querySelectorAll('[data-rv]');
   const heroItems = document.querySelectorAll('#hero [data-rv]');
@@ -26,78 +25,47 @@ document.documentElement.classList.add('js-ready');
   });
 })();
 
-/* Lenis smooth scroll (opcional — só se a CDN carregar) */
-let lenis = null;
-if (typeof Lenis !== 'undefined') {
-  lenis = new Lenis({ duration: 1.15, smoothWheel: true });
-  function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-  requestAnimationFrame(raf);
-}
-
-/* GSAP + ScrollTrigger (opcional) */
-if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-  if (lenis) {
-    lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.add((t) => lenis.raf(t * 1000));
-    gsap.ticker.lagSmoothing(0);
-  }
-
-  window.addEventListener('DOMContentLoaded', () => {
-    gsap.utils.toArray('.float-card').forEach((el, i) => {
-      const dir = parseFloat(el.dataset.float || 1);
-      gsap.to(el, {
-        y: 12 * dir,
-        duration: 4 + (i * 0.3),
-        ease: 'sine.inOut',
-        yoyo: true,
-        repeat: -1,
-        delay: i * 0.25
-      });
-    });
-  });
-}
-
-/* Scroll parallax (só se GSAP carregou) */
-const parallaxBg = document.getElementById('parallaxBg');
-if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-  gsap.to(parallaxBg, {
-    yPercent: 18,
-    ease: 'none',
-    scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true }
-  });
-  gsap.to('.blob.b1', { yPercent: -12, ease: 'none', scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true } });
-  gsap.to('.blob.b2', { yPercent: 10,  ease: 'none', scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true } });
-}
-
-/* Mouse parallax — só em dispositivos com mouse/trackpad */
+/* Mouse parallax — only on hover-capable devices, paused when hero is off-screen */
 const hero = document.getElementById('hero');
+const parallaxBg = document.getElementById('parallaxBg');
+const floatCards = document.querySelectorAll('.float-card');
 let mx = 0, my = 0, tx = 0, ty = 0;
+let rafId = null;
 const hasHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
 if (hero && hasHover) {
+  let heroVisible = true;
+
+  const heroObserver = new IntersectionObserver((entries) => {
+    heroVisible = entries[0].isIntersecting;
+    if (!heroVisible && rafId) { cancelAnimationFrame(rafId); rafId = null; }
+    if (heroVisible && !rafId) { rafId = requestAnimationFrame(tick); }
+  });
+  heroObserver.observe(hero);
+
   hero.addEventListener('mousemove', (e) => {
     const r = hero.getBoundingClientRect();
     mx = (e.clientX - r.left) / r.width - 0.5;
     my = (e.clientY - r.top) / r.height - 0.5;
-  });
+  }, { passive: true });
+
   function tick() {
     tx += (mx - tx) * 0.06;
     ty += (my - ty) * 0.06;
     if (parallaxBg) {
       parallaxBg.style.transform = `translate3d(${tx * -18}px, ${ty * -14}px, 0) scale(1.02)`;
     }
-    document.querySelectorAll('.float-card').forEach((el, i) => {
+    floatCards.forEach((el, i) => {
       const depth = (i % 2 === 0 ? 1 : -1) * (6 + i * 1.4);
       el.style.translate = `${tx * depth}px ${ty * depth}px`;
     });
-    requestAnimationFrame(tick);
+    rafId = requestAnimationFrame(tick);
   }
-  tick();
+  rafId = requestAnimationFrame(tick);
 }
 
 /* Reduced motion fallback */
 if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  if (typeof gsap !== 'undefined') gsap.globalTimeline.timeScale(0);
   document.querySelectorAll('[data-rv]').forEach(el => {
     el.style.animation = 'none';
     el.style.opacity = 1; el.style.transform = 'none'; el.style.filter = 'none';
@@ -137,7 +105,19 @@ if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
   if (dismiss) dismiss.addEventListener('click', closeBanner);
 })();
 
-/* Formulário de contato — feedback visual */
+/* Three.js globe — carregado apenas em desktop (≥980px) */
+if (window.matchMedia('(min-width: 980px)').matches) {
+  const s1 = document.createElement('script');
+  s1.src = 'js/vendor/three.min.js';
+  s1.onload = function () {
+    const s2 = document.createElement('script');
+    s2.src = 'js/globe.js';
+    document.body.appendChild(s2);
+  };
+  document.body.appendChild(s1);
+}
+
+/* Formulário de contato */
 (function () {
   const form = document.getElementById('contato-form');
   if (!form) return;

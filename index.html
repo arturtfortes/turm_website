@@ -10,6 +10,8 @@
 <meta name="description" content="A Turm cria sites de alta conversão, automações com IA e campanhas de tráfego pago para empresas que querem escalar com precisão e previsibilidade." />
 
 <link rel="canonical" href="https://turm.com.br/" />
+<link rel="alternate" hreflang="pt-BR" href="https://turm.com.br/" />
+<link rel="alternate" hreflang="x-default" href="https://turm.com.br/" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
@@ -30,18 +32,16 @@
 <link rel="icon" type="image/svg+xml" href="assets/img/turm-logo.svg">
 <link rel="alternate icon" href="assets/img/turm-logo.png">
 
-<!-- Google Fonts -->
+<!-- Google Fonts — apenas Bricolage Grotesque (Inter e JetBrains usam system fonts) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200;300;400;500;600;700&family=Inter:wght@100;300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;600&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;600&display=swap" rel="stylesheet"></noscript>
 
 <!-- Styles -->
 <link rel="stylesheet" href="css/styles.css">
 
-<!-- GSAP + ScrollTrigger + Lenis -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js" defer></script>
 
 <!-- JSON-LD Organization -->
 <script type="application/ld+json">
@@ -69,7 +69,7 @@
 <header class="nav">
   <div class="container nav-inner">
     <a href="#hero" class="brand" aria-label="Turm">
-      <img src="assets/img/turm-logo.svg" alt="" class="brand-logo" aria-hidden="true">
+      <img src="assets/img/turm-logo.svg" alt="" class="brand-logo" aria-hidden="true" width="28" height="28">
       <span class="brand-name">Turm</span>
     </a>
     <nav class="nav-links" aria-label="Principal">
@@ -98,11 +98,11 @@
 </nav>
 
 <!-- ============ HERO ============ -->
-<section class="hero" id="hero">
+<section class="hero" id="hero" tabindex="-1" aria-labelledby="hero-title">
   <!-- Background video w/ parallax wrapper -->
   <div class="hero-bg">
     <div class="hero-bg-inner" id="parallaxBg">
-      <video class="hero-video" autoplay muted loop playsinline preload="auto">
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata">
         <source src="assets/video/logo-animado.webm" type="video/webm">
       </video>
     </div>
@@ -126,7 +126,7 @@
           AI-Driven Growth Agency
         </span>
 
-        <h1 class="reveal" data-rv>
+        <h1 id="hero-title" class="reveal" data-rv>
           <span class="word">Seu site, seus anúncios</span><br>
           <span class="word">e seu WhatsApp trabalhando</span><br>
           <span class="word">como um</span> <span class="word grad">único sistema</span> <span class="word grad">de vendas.</span>
@@ -225,7 +225,7 @@
 </section>
 
 <!-- ============ DOBRA 2 — IDENTIFICAÇÃO DO PROBLEMA ============ -->
-<section class="problem" id="problema">
+<section class="problem" id="problema" aria-labelledby="problem-title">
   <div class="grid-bg-static" aria-hidden="true"></div>
 
   <div class="container">
@@ -235,7 +235,7 @@
         <span class="dot"></span>
         Diagnóstico · Onde o funil vaza
       </span>
-      <h2 class="reveal" data-rv>
+      <h2 id="problem-title" class="reveal" data-rv>
         Sua empresa pode estar <span class="grad">perdendo vendas</span><br>
         antes mesmo de falar com o cliente.
       </h2>
@@ -299,7 +299,7 @@
 </section>
 
 <!-- ============ DOBRA 3 — SOLUÇÃO ============ -->
-<section class="solution" id="solucao">
+<section class="solution" id="solucao" aria-labelledby="solution-title">
   <div class="sol-blob a" aria-hidden="true"></div>
   <div class="sol-blob b" aria-hidden="true"></div>
 
@@ -313,7 +313,7 @@
           <span class="dot"></span>
           Solução
         </span>
-        <h2 class="reveal" data-rv>
+        <h2 id="solution-title" class="reveal" data-rv>
           Um <span class="grad">sistema comercial digital</span>, não serviços isolados.
         </h2>
         <p class="solution-lede reveal" data-rv>
@@ -328,7 +328,12 @@
       <!-- RIGHT — Hub diagram with particle globe -->
       <div class="hub reveal" data-rv>
       <!-- Three.js particle globe canvas -->
-      <div id="hub-globe" class="hub-globe" aria-hidden="true"></div>
+      <div id="hub-globe" class="hub-globe" aria-hidden="true">
+        <span class="g-sphere"></span>
+        <span class="g-ring r1"></span>
+        <span class="g-ring r2"></span>
+        <span class="g-ring r3"></span>
+      </div>
 
       <div class="hub-pillar p1">
         <div class="ic">
@@ -380,7 +385,7 @@
 </section>
 
 <!-- ============ DOBRA 4 — SERVIÇOS ============ -->
-<section class="services" id="servicos">
+<section class="services" id="servicos" aria-labelledby="services-title">
   <div class="container">
 
     <div class="services-head">
@@ -388,7 +393,7 @@
         <span class="dot"></span>
         Serviços
       </span>
-      <h2 class="reveal" data-rv>
+      <h2 id="services-title" class="reveal" data-rv>
         O que a Turm pode <span class="grad">construir</span> para sua empresa.
       </h2>
       <p class="services-lede reveal" data-rv>
@@ -510,7 +515,7 @@
 </section>
 
 <!-- ============ DOBRA 5 — BENEFÍCIOS ============ -->
-<section class="benefits" id="beneficios">
+<section class="benefits" id="beneficios" aria-labelledby="benefits-title">
   <div class="container">
 
     <div class="benefits-split">
@@ -518,7 +523,7 @@
       <!-- LEFT — pitch -->
       <div class="benefits-left reveal" data-rv>
         <span class="eyebrow">Benefícios da Turm</span>
-        <h2>Mais clareza, mais conversão & <span class="grad">mais previsibilidade</span></h2>
+        <h2 id="benefits-title">Mais clareza, mais conversão & <span class="grad">mais previsibilidade</span></h2>
         <p>Tenha acesso a uma estrutura comercial completa sem perder agilidade ou atenção personalizada.</p>
         <p>Trabalhe com um time integrado de site, tráfego, IA e conteúdo que já pensa cinco movimentos à frente do seu funil.</p>
         <a href="#contato" class="benefits-cta">
@@ -599,7 +604,7 @@
 
 
 <!-- ============ DOBRA 6 — DIAGNÓSTICO ============ -->
-<section class="diagnostic" id="diagnostico">
+<section class="diagnostic" id="diagnostico" aria-labelledby="diagnostic-title">
   <div class="container">
 
     <div class="diagnostic-head">
@@ -607,7 +612,7 @@
         <span class="dot"></span>
         Diagnóstico
       </span>
-      <h2 class="reveal" data-rv>
+      <h2 id="diagnostic-title" class="reveal" data-rv>
         Descubra onde seu funil está <span class="grad">perdendo oportunidades</span>.
       </h2>
       <p class="reveal" data-rv>
@@ -695,7 +700,7 @@
 </section>
 
 <!-- ============ DOBRA 8 — CONTATO ============ -->
-<section class="contato" id="contato">
+<section class="contato" id="contato" aria-labelledby="contato-title">
   <div class="contato-blob a" aria-hidden="true"></div>
   <div class="contato-blob b" aria-hidden="true"></div>
 
@@ -708,7 +713,7 @@
           <span class="dot"></span>
           Contato
         </span>
-        <h2 class="reveal" data-rv>
+        <h2 id="contato-title" class="reveal" data-rv>
           Vamos conversar sobre o <span class="grad">crescimento da sua empresa</span>.
         </h2>
         <p class="contato-desc reveal" data-rv>
@@ -784,7 +789,7 @@
 
       <div class="footer-brand">
         <a href="#hero" class="brand" aria-label="Turm">
-          <img src="assets/img/turm-logo.svg" alt="" class="brand-logo" aria-hidden="true">
+          <img src="assets/img/turm-logo.svg" alt="" class="brand-logo" aria-hidden="true" width="28" height="28">
           <span class="brand-name">Turm</span>
         </a>
         <p class="footer-tagline">Estratégia, tecnologia e execução em um único sistema de crescimento.</p>
@@ -845,31 +850,6 @@
 
 <script src="js/app.js" defer></script>
 
-<!-- ════════════════════════════════════════════════════
-     Three.js Particle Globe (Dobra 3 — Solução)
-════════════════════════════════════════════════════ -->
-<script src="js/vendor/three.min.js" defer></script>
-<script id="hubVertexShader" type="x-shader/x-vertex">
-uniform float uTime; uniform float uDistortion; uniform float uSize; uniform vec2 uMouse; varying float vNoise;
-vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
-vec4 mod289(vec4 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
-vec4 permute(vec4 x) { return mod289(((x*34.0)+1.0)*x); }
-vec4 taylorInvSqrt(vec4 r) { return 1.79284291400159 - 0.85373472095314 * r; }
-float snoise(vec3 v) { const vec2 C = vec2(1.0/6.0, 1.0/3.0) ; const vec4 D = vec4(0.0, 0.5, 1.0, 2.0); vec3 i = floor(v + dot(v, C.yyy) ); vec3 x0 = v - i + dot(i, C.xxx) ; vec3 g = step(x0.yzx, x0.xyz); vec3 l = 1.0 - g; vec3 i1 = min( g.xyz, l.zxy ); vec3 i2 = max( g.xyz, l.zxy ); vec3 x1 = x0 - i1 + 1.0 * C.xxx; vec3 x2 = x0 - i2 + 2.0 * C.xxx; vec3 x3 = x0 - 1.0 + 3.0 * C.xxx; i = mod289(i); vec4 p = permute( permute( permute( i.z + vec4(0.0, i1.z, i2.z, 1.0 )) + i.y + vec4(0.0, i1.y, i2.y, 1.0 )) + i.x + vec4(0.0, i1.x, i2.x, 1.0 )); float n_ = 1.0/7.0; vec3 ns = n_ * D.wyz - D.xzx; vec4 j = p - 49.0 * floor(p * ns.z *ns.z); vec4 x_ = floor(j * ns.z); vec4 y_ = floor(j - 7.0 * x_ ); vec4 x = x_ *ns.x + ns.yyyy; vec4 y = y_ *ns.x + ns.yyyy; vec4 h = 1.0 - abs(x) - abs(y); vec4 b0 = vec4( x.xy, y.xy ); vec4 b1 = vec4( x.zw, y.zw ); vec4 s0 = floor(b0)*2.0 + 1.0; vec4 s1 = floor(b1)*2.0 + 1.0; vec4 sh = -step(h, vec4(0.0)); vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy ; vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww ; vec3 p0 = vec3(a0.xy,h.x); vec3 p1 = vec3(a0.zw,h.y); vec3 p2 = vec3(a1.xy,h.z); vec3 p3 = vec3(a1.zw,h.w); vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2, p2), dot(p3,p3))); p0 *= norm.x; p1 *= norm.y; p2 *= norm.z; p3 *= norm.w; vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0); m = m * m; return 42.0 * dot( m*m, vec4( dot(p0,x0), dot(p1,x1), dot(p2,x2), dot(p3,x3) ) ); }
-void main() { vec3 pos = position; float noise = snoise(vec3(pos.x * 0.5 + uTime * 0.15, pos.y * 0.5, pos.z * 0.5)); vNoise = noise; vec3 newPos = pos + (normal * noise * uDistortion); float dist = distance(uMouse * 10.0, newPos.xy); float interaction = smoothstep(6.0, 0.0, dist); newPos.z += interaction * 1.5; vec4 mvPosition = modelViewMatrix * vec4(newPos, 1.0); gl_Position = projectionMatrix * mvPosition; gl_PointSize = uSize * (22.0 / -mvPosition.z); }
-</script>
-<script id="hubFragmentShader" type="x-shader/x-fragment">
-uniform vec3 uColor; uniform vec3 uColorAccent; varying float vNoise;
-void main() {
-  vec2 center = gl_PointCoord - vec2(0.5);
-  float dist = length(center);
-  if (dist > 0.5) discard;
-  float alpha = smoothstep(0.5, 0.0, dist);
-  vec3 finalColor = mix(uColor, uColorAccent, vNoise * 0.5 + 0.5);
-  gl_FragColor = vec4(finalColor, alpha * 0.85);
-}
-</script>
-<script src="js/globe.js" defer></script>
 
 
 </body>
