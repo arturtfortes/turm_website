@@ -6,3 +6,7 @@ Thumbs.db
 node_modules/
 .env
 .env.local
+
+# Editor local — não vai para o GitHub
+editor/
+Abrir Editor.bat
