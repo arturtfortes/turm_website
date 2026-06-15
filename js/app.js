@@ -64,6 +64,20 @@ if (hero && hasHover) {
   rafId = requestAnimationFrame(tick);
 }
 
+/* Autoplay fallback para mobile — força play se o autoplay falhar */
+(function () {
+  const video = document.getElementById('heroVideo');
+  if (!video) return;
+  const tryPlay = () => video.play().catch(() => {});
+  const p = video.play();
+  if (p !== undefined) {
+    p.catch(() => {
+      document.addEventListener('touchstart', tryPlay, { once: true });
+      document.addEventListener('click', tryPlay, { once: true });
+    });
+  }
+})();
+
 /* Reduced motion fallback */
 if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.querySelectorAll('[data-rv]').forEach(el => {
@@ -117,17 +131,68 @@ if (window.matchMedia('(min-width: 980px)').matches) {
   document.body.appendChild(s1);
 }
 
-/* Formulário de contato */
+/* Formulário de contato — envia o lead direto para o WhatsApp da Turm */
 (function () {
   const form = document.getElementById('contato-form');
   if (!form) return;
+
+  const WHATSAPP_NUMBER = '5541936184146';
+
+  // Rótulos legíveis para o serviço selecionado
+  const SERVICO_LABELS = {
+    site: 'Site de alta conversão',
+    trafego: 'Tráfego pago',
+    automacao: 'Automação com IA',
+    conteudo: 'Conteúdo e criativos',
+    sistema: 'Sistema completo',
+  };
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const data = new FormData(form);
+    const nome = (data.get('nome') || '').toString().trim();
+    const empresa = (data.get('empresa') || '').toString().trim();
+    const email = (data.get('email') || '').toString().trim();
+    const telefone = (data.get('telefone') || '').toString().trim();
+    const servicoRaw = (data.get('servico') || '').toString().trim();
+    const servico = SERVICO_LABELS[servicoRaw] || servicoRaw;
+    const mensagem = (data.get('mensagem') || '').toString().trim();
+
+    // Monta a mensagem personalizada — identifica que o lead veio do site
+    const linhas = [
+      'Olá! Vim pelo site da Turm e gostaria de solicitar um diagnóstico gratuito. 🚀',
+      '',
+      '*Meus dados:*',
+    ];
+    if (nome) linhas.push('• Nome: ' + nome);
+    if (empresa) linhas.push('• Empresa: ' + empresa);
+    if (email) linhas.push('• E-mail: ' + email);
+    if (telefone) linhas.push('• WhatsApp: ' + telefone);
+    if (servico) linhas.push('• Serviço de interesse: ' + servico);
+    if (mensagem) {
+      linhas.push('');
+      linhas.push('*Sobre o negócio:*');
+      linhas.push(mensagem);
+    }
+
+    const texto = encodeURIComponent(linhas.join('\n'));
+    const url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + texto;
+
+    // Feedback visual antes de abrir o WhatsApp
     const btn = form.querySelector('.form-submit');
     const orig = btn.textContent;
-    btn.textContent = 'Mensagem enviada! Falaremos em breve.';
+    btn.textContent = 'Abrindo o WhatsApp...';
     btn.style.background = 'linear-gradient(180deg,#4ade80 0%,#16a34a 100%)';
     btn.disabled = true;
+
+    window.open(url, '_blank', 'noopener,noreferrer');
+
     setTimeout(() => {
       btn.textContent = orig;
       btn.style.background = '';
