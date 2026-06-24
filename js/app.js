@@ -136,7 +136,7 @@ if (window.matchMedia('(min-width: 980px)').matches) {
   const form = document.getElementById('contato-form');
   if (!form) return;
 
-  const WHATSAPP_NUMBER = '5541936184146';
+  const WHATSAPP_NUMBER = '5541936181290';
 
   // Rótulos legíveis para o serviço selecionado
   const SERVICO_LABELS = {
